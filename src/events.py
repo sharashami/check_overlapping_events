@@ -7,7 +7,7 @@ def check_overlapping_events(events):
     pre_processing_input(events)
 
     for i in range(0,n_events):
-        for j in range(i,n_events):
+        for j in range(i+1,n_events):
             if is_overlapping(events[i],events[j]):
                 overlapping_events.append([events[i],events[j]]) 
     
