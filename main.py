@@ -1,26 +1,5 @@
-from datetime import datetime
-from src.events import check_overlapping_events
+from src.util import printOverlappingEvents, generateEvents, check_overlapping_events
 
-events = [
-    {
-    'start_time' : "08/16/2019 00:30",
-    'end_time' : "08/16/2019 01:30",
-    'name' : 'event1',
-    },
-    {
-    'start_time' : "08/16/2019 00:25",
-    'end_time' : "08/16/2019 01:40",
-    'name' : 'event2',
-    },
-    {
-    'start_time' : "08/16/2019 00:30",
-    'end_time' : "08/16/2019 00:30",
-    'name' : 'event3',
-    }
+if __name__ == "__main__":
+    printOverlappingEvents( check_overlapping_events( generateEvents(5, sort=True) ) )
 
-]
-
-r = check_overlapping_events(events)
-for i in r:
-    print(i)
-print(len(r))

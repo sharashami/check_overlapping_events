@@ -3,7 +3,6 @@ from src import events
 
 class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 
-    
     def test_number_of_pairs_of_overlapping_events_equals_0(self):
         
         self.assertEqual(
