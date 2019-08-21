@@ -1,5 +1,5 @@
 import unittest
-from src import events
+from src import util as events
 
 class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 

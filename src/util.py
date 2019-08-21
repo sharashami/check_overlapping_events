@@ -4,18 +4,19 @@ import random
 def check_overlapping_events(events):
     n_events = len(events)
     overlapping_events = []
-    
-    pre_processing_input(events)
+    eventsToDatetime(events)
 
-    for i in range(0,n_events):
+    for i in range(0,n_events):        
         for j in range(i+1,n_events):
+            if events[i]['end_time'] < events[j]['start_time']:#no need to keep checking
+                break
             if is_overlapping(events[i],events[j]):
                 overlapping_events.append([events[i],events[j]]) 
     
     return overlapping_events
 
 
-def pre_processing_input(events):    
+def eventsToDatetime(events):    
     return list(map(lambda e : strToDatetime, events))
 
 def strToDatetime(e):
@@ -32,7 +33,7 @@ def is_overlapping(event1, event2):
                 )
 
 
-def generateEvents(num, sort = False):
+def generateEvents(num):
     start = datetime(2019, 8, 1,hour=0, minute=0).timestamp()
     end =  datetime(2019, 11, 1,hour=0, minute=0).timestamp()
     size = 345600 #4 days
@@ -47,7 +48,7 @@ def generateEvents(num, sort = False):
             
         events.append(datetimeEventToDict( e_start,  e_start + e_size,  i+1))
     
-    return events
+    return sorted(events, key= lambda e: datetime.strptime(e['start_time'],"%m/%d/%Y %H:%M").timestamp())
 
 def datetimeEventToDict(start, end, n):
     return {'name' : str(n),
