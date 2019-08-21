@@ -1,5 +1,5 @@
 import unittest
-from src import events
+from src import util as events
 from datetime import datetime
 
 class TestTwoEventsOverlapping(unittest.TestCase):
