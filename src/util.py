@@ -2,6 +2,9 @@ from datetime import datetime, date
 import random
 
 def check_overlapping_events(events):
+    if events == None or len(events) == 0:
+        raise ValueError("Empty or None list. Provide a valid list of events")
+
     n_events = len(events)
     overlapping_events = []
     eventsToDatetime(events)
@@ -26,6 +29,9 @@ def strToDatetime(e):
         return e
 
 def is_overlapping(event1, event2):    
+    if event1 == None or len(event1) == 0 or event2 == None or len(event2) == 0:
+        raise ValueError("Empty or None events. Provide a valid event")
+
 
     return not ( 
                 event1['end_time'] < event2['start_time']  

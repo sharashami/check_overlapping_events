@@ -4,6 +4,15 @@ from datetime import datetime
 
 class TestTwoEventsOverlapping(unittest.TestCase):
 
+    def test_empty_list(self):
+        with self.assertRaises(ValueError):
+            events.is_overlapping([], [])
+        
+    def test_none(self):
+        with self.assertRaises(ValueError):
+            events.is_overlapping(None, None)
+        
+
     def test_overlap_event1_occurs_exactly_same_time_event2(self):
         self.assertTrue(events.is_overlapping(
             {
