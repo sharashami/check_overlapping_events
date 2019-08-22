@@ -3,6 +3,18 @@ from src import util as events
 
 class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 
+    def test_input_list_sized_1(self):
+        self.assertIsNone(events.check_overlapping_events(
+                [
+                   {
+                    'start_time' : "10/16/2019 00:30",
+                    'end_time' : "08/16/2019 01:30",
+                    'name' : 'event1',
+                    }
+                ])
+                )
+          
+
     def test_empty_list(self):
         with self.assertRaises(ValueError):
             events.check_overlapping_events([])
@@ -125,8 +137,5 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
                 )
         )
         
-           
-
-
 if __name__ == '__main__':
     unittest.main()
