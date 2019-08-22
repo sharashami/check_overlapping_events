@@ -13,5 +13,7 @@ print_list = int(sys.argv[2])
 if print_list:
     printOverlappingEvents( check_overlapping_events( generateEvents(n_events) ) )
 else:
-    check_overlapping_events( generateEvents(n_events) )
+    n = len(check_overlapping_events( generateEvents(n_events) ))
+    print(f'{n} pairs of overlapped events were found')
+    
     

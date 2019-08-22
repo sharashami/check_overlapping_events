@@ -1,10 +1,10 @@
 import unittest
-from src import util as events
+from src.util import check_overlapping_events
 
 class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 
     def test_input_list_sized_1(self):
-        self.assertIsNone(events.check_overlapping_events(
+        self.assertIsNone(check_overlapping_events(
                 [
                    {
                     'start_time' : "10/16/2019 00:30",
@@ -17,17 +17,17 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 
     def test_empty_list(self):
         with self.assertRaises(ValueError):
-            events.check_overlapping_events([])
+            check_overlapping_events([])
         
     def test_none(self):
         with self.assertRaises(ValueError):
-            events.check_overlapping_events(None)
+            check_overlapping_events(None)
         
 
     def test_number_of_pairs_of_overlapping_events_equals_0(self):
         
         self.assertEqual(
-            0, len( events.check_overlapping_events(
+            0, len( check_overlapping_events(
                 [
                    {
                     'start_time' : "10/16/2019 00:30",
@@ -44,7 +44,7 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
         )    
 
     def test_pairs_of_overlapped_events_sized_1(self):
-        overlapped_events = events.check_overlapping_events(
+        overlapped_events = check_overlapping_events(
                 [
                    {
                     'start_time' : "08/16/2019 00:30",
@@ -61,7 +61,7 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
     
     def test_pairs_of_overlapped_events_sized_2(self):
         
-        overlapped_events =  events.check_overlapping_events(
+        overlapped_events =  check_overlapping_events(
                 [
                    {
                     'start_time' : "08/16/2019 00:30",
@@ -92,7 +92,7 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
     def test_number_of_pairs_of_overlapping_events_equals_1(self):
         
         self.assertEqual(
-            1, len( events.check_overlapping_events(
+            1, len( check_overlapping_events(
                 [
                    {
                     'start_time' : "08/16/2019 00:30",
@@ -111,7 +111,7 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
     def test_number_of_pairs_of_overlapping_events_equals_2(self):
         
         self.assertEqual(
-            2, len( events.check_overlapping_events(
+            2, len( check_overlapping_events(
                 [
                    {
                     'start_time' : "08/16/2019 00:30",
@@ -137,5 +137,3 @@ class TestReturnedListOfOverlappingEvents(unittest.TestCase):
                 )
         )
         
-if __name__ == '__main__':
-    unittest.main()
