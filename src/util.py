@@ -42,12 +42,15 @@ def is_overlapping(event1, event2):
 
 
 def generateEvents(num):
+    if num == 0:
+        raise ValueError("Provide number of events greater than zero")
+        
     start = datetime(2019, 8, 1,hour=0, minute=0).timestamp()
     end =  datetime(2019, 11, 1,hour=0, minute=0).timestamp()
     size = 345600 #4 days
     events = [datetimeEventToDict(start,start+size,0)]
     
-    for i in range(num):
+    for i in range(num-1):
         e_size = random.randrange(0, 345600) if random.random() > 0.5 else 345600
         if (random.random() > 0.5):
             e_start = datetime.strptime(events[-1]['start_time'],"%m/%d/%Y %H:%M").timestamp() if ( random.random() > 0.6 ) else random.randrange(start, end)
