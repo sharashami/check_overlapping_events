@@ -3,6 +3,15 @@ from src import util as events
 
 class TestReturnedListOfOverlappingEvents(unittest.TestCase):
 
+    def test_empty_list(self):
+        with self.assertRaises(ValueError):
+            events.check_overlapping_events([])
+        
+    def test_none(self):
+        with self.assertRaises(ValueError):
+            events.check_overlapping_events(None)
+        
+
     def test_number_of_pairs_of_overlapping_events_equals_0(self):
         
         self.assertEqual(

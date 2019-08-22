@@ -131,4 +131,6 @@ event 26 starting at 08/22/2019 17:51, ending at 08/23/2019 12:36
 # Improvements to the future?
 
 * Code refactoring
+* Adding the output in a file
+* Think about more test cases
 
