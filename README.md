@@ -11,6 +11,17 @@ When maintaining a calendar of events, it is important to know if an event overl
 ```shell
    python main.py 1000 0    
 ```
+## Or you can run one_file_code.py for command line interaction
+
+```shell
+   python one_file_code.py   
+```
+
+# How to test?
+
+```shell
+   python -m unittest discover -s tests  
+```
 
 # How did I approach?
 
@@ -23,12 +34,12 @@ When maintaining a calendar of events, it is important to know if an event overl
 # The input is a list of events
 
 * There is a function to generate n random events 
-* The events are generated between August and November and sized up to 4 days 
+* The events are generated between August/2019 and November/2020 and sized up to 4 days 
 * I tried to add events at the same start and/or end time, and with different size up to 4 days
 
 ```shell
     start = datetime(2019, 8, 1,hour=0, minute=0).timestamp()
-    end =  datetime(2019, 11, 1,hour=0, minute=0).timestamp()
+    end =  datetime(2020, 11, 1,hour=0, minute=0).timestamp()
     size = 345600 #4 days    
 ```
 * The events look like 

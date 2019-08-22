@@ -46,7 +46,7 @@ def generateEvents(num):
         raise ValueError("Provide number of events greater than zero")
         
     start = datetime(2019, 8, 1,hour=0, minute=0).timestamp()
-    end =  datetime(2019, 11, 1,hour=0, minute=0).timestamp()
+    end =  datetime(2020, 11, 1,hour=0, minute=0).timestamp()
     size = 345600 #4 days
     events = [datetimeEventToDict(start,start+size,0)]
     
