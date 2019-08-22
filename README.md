@@ -139,6 +139,44 @@ event 26 starting at 08/22/2019 17:51, ending at 08/23/2019 12:36
 
 ```
 
+# Runtime
+## The runtime depends on the generated events
+
+* 5 events between August/2019 and November/2020 
+``` shell
+    runtime: 0.003529787063598633
+    1 pairs of overlapped events were found
+```
+
+* 10 events between August/2019 and November/2020 
+``` shell
+runtime: 0.00912332534790039
+1 pairs of overlapped events were found
+```
+
+
+* 50 events between August/2019 and November/2020 
+``` shell
+    runtime: 0.006481170654296875
+    46 pairs of overlapped events were found
+```
+* 1000 events between August/2019 and November/2020 
+``` shell
+    runtime: 0.07254600524902344
+    6858 pairs of overlapped events were found
+```
+
+* 10000 events between August/2019 and November/2020 
+``` shell
+    runtime: 2.570497512817383
+    649426 pairs of overlapped events were found
+```
+* 20000 events between August/2019 and November/2020 
+``` shell
+    runtime: 7.3763508796691895
+    2570959 pairs of overlapped events were found
+```
+
 # Improvements to the future?
 
 * Code refactoring
