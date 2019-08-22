@@ -4,7 +4,9 @@ import random
 def check_overlapping_events(events):
     if events == None or len(events) == 0:
         raise ValueError("Empty or None list. Provide a valid list of events")
-
+    if len(events) == 1:
+        return None
+        
     n_events = len(events)
     overlapping_events = []
     eventsToDatetime(events)
